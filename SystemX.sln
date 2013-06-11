@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemX", "SystemX\SystemX.csproj", "{F27E55D1-32F7-4560-9626-0EE4B943B288}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemXGUI", "SystemXGUI\SystemXGUI.csproj", "{E1DAEBA7-B136-4ADA-89FB-207E2DB8CB71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemData", "SystemData\SystemData.csproj", "{0B19FDC9-2B5B-4C2A-957B-EC989E971F48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +11,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F27E55D1-32F7-4560-9626-0EE4B943B288}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F27E55D1-32F7-4560-9626-0EE4B943B288}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F27E55D1-32F7-4560-9626-0EE4B943B288}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F27E55D1-32F7-4560-9626-0EE4B943B288}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1DAEBA7-B136-4ADA-89FB-207E2DB8CB71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1DAEBA7-B136-4ADA-89FB-207E2DB8CB71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1DAEBA7-B136-4ADA-89FB-207E2DB8CB71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1DAEBA7-B136-4ADA-89FB-207E2DB8CB71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B19FDC9-2B5B-4C2A-957B-EC989E971F48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B19FDC9-2B5B-4C2A-957B-EC989E971F48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B19FDC9-2B5B-4C2A-957B-EC989E971F48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B19FDC9-2B5B-4C2A-957B-EC989E971F48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

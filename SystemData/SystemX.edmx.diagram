@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="db25695144364362a46f48f0ffd50259" Name="Diagram1">
+        <EntityTypeShape EntityType="SystemXModel.Account" Width="1.5" PointX="5.25" PointY="30.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.Audit" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.City" Width="1.5" PointX="1.5" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.Country" Width="1.5" PointX="1.5" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.County" Width="1.5" PointX="3.75" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.Customer" Width="1.5" PointX="3" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.CustomerAccount" Width="1.5" PointX="10.5" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.Estate" Width="1.5" PointX="8.25" PointY="31.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.LU_AccountType" Width="1.5" PointX="3" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.LU_Bank" Width="1.5" PointX="3" PointY="39.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.LU_EstateType" Width="1.5" PointX="3" PointY="42.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.LU_Item" Width="1.5" PointX="11.25" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.LU_OperationType" Width="1.5" PointX="14.25" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.LU_ProcessType" Width="1.5" PointX="6" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.LU_RateType" Width="1.5" PointX="11.25" PointY="34.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.Message" Width="1.5" PointX="0.75" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.Notary" Width="1.5" PointX="6" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.NotaryAccount" Width="1.5" PointX="13.25" PointY="30" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.PaymentTransaction" Width="1.5" PointX="15.5" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.ProcessApproval" Width="1.5" PointX="8.25" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.Rate" Width="1.5" PointX="13.5" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.Role" Width="1.5" PointX="9" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.Sex" Width="1.5" PointX="0.75" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.SystemAccount" Width="1.5" PointX="7.5" PointY="38.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.TransactionDetailBuyer" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.User" Width="1.5" PointX="11.25" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.UserTransaction" Width="1.5" PointX="16.5" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="SystemXModel.Vehicle" Width="1.5" PointX="3" PointY="50.625" IsExpanded="true" />
+        <AssociationConnector Association="SystemXModel.FK_Account_LU_AccountType" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_Account_LU_Bank" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_Account_Message" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_CustomerAccount_Account" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_NotaryAccount_Account" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_SystemAccount_Account" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_UserTransaction_Account" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_City_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_County_City" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_Estate_County" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_Notary_County" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_Customer_Message" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_Customer_SEX" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_CustomerAccount_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_ProcessApproval_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_Estate_LU_EstateType" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_Estate_Message" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_LU_AccountType_Message" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_LU_Bank_Message" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_LU_EstateType_Message" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_PaymentTransaction_LU_Item" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_Rate_LU_Item" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_UserTransaction_LU_OperationType" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_ProcessApproval_LU_ProcessType" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_Rate_LU_RateType" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_Notary_Message" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_PaymentTransaction_Message" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_ProcessApproval_Message" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_Rate_Message" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_User_Message" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_User_Message1" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_Vehicle_Message" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_NotaryAccount_Notary" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_User_Notary" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_UserTransaction_NotaryAccount" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_PaymentTransaction_SystemAccount" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_PaymentTransaction_User" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_Rate_User" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_User_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="SystemXModel.FK_UserTransaction_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

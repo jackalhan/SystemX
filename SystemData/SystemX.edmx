@@ -1,0 +1,2707 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SystemXModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="SystemXModelStoreContainer">
+          <EntitySet Name="Account" EntityType="SystemXModel.Store.Account" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Audit" EntityType="SystemXModel.Store.Audit" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="City" EntityType="SystemXModel.Store.City" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Country" EntityType="SystemXModel.Store.Country" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="County" EntityType="SystemXModel.Store.County" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Customer" EntityType="SystemXModel.Store.Customer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CustomerAccount" EntityType="SystemXModel.Store.CustomerAccount" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Estate" EntityType="SystemXModel.Store.Estate" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LU_AccountType" EntityType="SystemXModel.Store.LU_AccountType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LU_Bank" EntityType="SystemXModel.Store.LU_Bank" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LU_EstateType" EntityType="SystemXModel.Store.LU_EstateType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LU_Item" EntityType="SystemXModel.Store.LU_Item" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LU_OperationType" EntityType="SystemXModel.Store.LU_OperationType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LU_ProcessType" EntityType="SystemXModel.Store.LU_ProcessType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LU_RateType" EntityType="SystemXModel.Store.LU_RateType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Message" EntityType="SystemXModel.Store.Message" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Notary" EntityType="SystemXModel.Store.Notary" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NotaryAccount" EntityType="SystemXModel.Store.NotaryAccount" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PaymentTransaction" EntityType="SystemXModel.Store.PaymentTransaction" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProcessApproval" EntityType="SystemXModel.Store.ProcessApproval" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Rate" EntityType="SystemXModel.Store.Rate" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Role" EntityType="SystemXModel.Store.Role" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sex" EntityType="SystemXModel.Store.Sex" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="SystemXModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SystemAccount" EntityType="SystemXModel.Store.SystemAccount" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TransactionDetailBuyer" EntityType="SystemXModel.Store.TransactionDetailBuyer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User" EntityType="SystemXModel.Store.User" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserTransaction" EntityType="SystemXModel.Store.UserTransaction" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Vehicle" EntityType="SystemXModel.Store.Vehicle" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Account_LU_AccountType" Association="SystemXModel.Store.FK_Account_LU_AccountType">
+            <End Role="LU_AccountType" EntitySet="LU_AccountType" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Account_LU_Bank" Association="SystemXModel.Store.FK_Account_LU_Bank">
+            <End Role="LU_Bank" EntitySet="LU_Bank" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Account_Message" Association="SystemXModel.Store.FK_Account_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_City_Country" Association="SystemXModel.Store.FK_City_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="City" EntitySet="City" />
+          </AssociationSet>
+          <AssociationSet Name="FK_County_City" Association="SystemXModel.Store.FK_County_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="County" EntitySet="County" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Message" Association="SystemXModel.Store.FK_Customer_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_SEX" Association="SystemXModel.Store.FK_Customer_SEX">
+            <End Role="Sex" EntitySet="Sex" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CustomerAccount_Account" Association="SystemXModel.Store.FK_CustomerAccount_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="CustomerAccount" EntitySet="CustomerAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CustomerAccount_Customer" Association="SystemXModel.Store.FK_CustomerAccount_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="CustomerAccount" EntitySet="CustomerAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Estate_County" Association="SystemXModel.Store.FK_Estate_County">
+            <End Role="County" EntitySet="County" />
+            <End Role="Estate" EntitySet="Estate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Estate_LU_EstateType" Association="SystemXModel.Store.FK_Estate_LU_EstateType">
+            <End Role="LU_EstateType" EntitySet="LU_EstateType" />
+            <End Role="Estate" EntitySet="Estate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Estate_Message" Association="SystemXModel.Store.FK_Estate_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="Estate" EntitySet="Estate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LU_AccountType_Message" Association="SystemXModel.Store.FK_LU_AccountType_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="LU_AccountType" EntitySet="LU_AccountType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LU_Bank_Message" Association="SystemXModel.Store.FK_LU_Bank_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="LU_Bank" EntitySet="LU_Bank" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LU_EstateType_Message" Association="SystemXModel.Store.FK_LU_EstateType_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="LU_EstateType" EntitySet="LU_EstateType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notary_County" Association="SystemXModel.Store.FK_Notary_County">
+            <End Role="County" EntitySet="County" />
+            <End Role="Notary" EntitySet="Notary" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notary_Message" Association="SystemXModel.Store.FK_Notary_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="Notary" EntitySet="Notary" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotaryAccount_Account" Association="SystemXModel.Store.FK_NotaryAccount_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="NotaryAccount" EntitySet="NotaryAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotaryAccount_Notary" Association="SystemXModel.Store.FK_NotaryAccount_Notary">
+            <End Role="Notary" EntitySet="Notary" />
+            <End Role="NotaryAccount" EntitySet="NotaryAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PaymentTransaction_LU_Item" Association="SystemXModel.Store.FK_PaymentTransaction_LU_Item">
+            <End Role="LU_Item" EntitySet="LU_Item" />
+            <End Role="PaymentTransaction" EntitySet="PaymentTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PaymentTransaction_Message" Association="SystemXModel.Store.FK_PaymentTransaction_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="PaymentTransaction" EntitySet="PaymentTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PaymentTransaction_SystemAccount" Association="SystemXModel.Store.FK_PaymentTransaction_SystemAccount">
+            <End Role="SystemAccount" EntitySet="SystemAccount" />
+            <End Role="PaymentTransaction" EntitySet="PaymentTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PaymentTransaction_User" Association="SystemXModel.Store.FK_PaymentTransaction_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="PaymentTransaction" EntitySet="PaymentTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProcessApproval_Customer" Association="SystemXModel.Store.FK_ProcessApproval_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="ProcessApproval" EntitySet="ProcessApproval" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProcessApproval_LU_ProcessType" Association="SystemXModel.Store.FK_ProcessApproval_LU_ProcessType">
+            <End Role="LU_ProcessType" EntitySet="LU_ProcessType" />
+            <End Role="ProcessApproval" EntitySet="ProcessApproval" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProcessApproval_Message" Association="SystemXModel.Store.FK_ProcessApproval_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="ProcessApproval" EntitySet="ProcessApproval" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rate_LU_Item" Association="SystemXModel.Store.FK_Rate_LU_Item">
+            <End Role="LU_Item" EntitySet="LU_Item" />
+            <End Role="Rate" EntitySet="Rate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rate_LU_RateType" Association="SystemXModel.Store.FK_Rate_LU_RateType">
+            <End Role="LU_RateType" EntitySet="LU_RateType" />
+            <End Role="Rate" EntitySet="Rate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rate_Message" Association="SystemXModel.Store.FK_Rate_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="Rate" EntitySet="Rate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rate_User" Association="SystemXModel.Store.FK_Rate_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Rate" EntitySet="Rate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SystemAccount_Account" Association="SystemXModel.Store.FK_SystemAccount_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="SystemAccount" EntitySet="SystemAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Message" Association="SystemXModel.Store.FK_User_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Message1" Association="SystemXModel.Store.FK_User_Message1">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Notary" Association="SystemXModel.Store.FK_User_Notary">
+            <End Role="Notary" EntitySet="Notary" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role" Association="SystemXModel.Store.FK_User_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserTransaction_Account" Association="SystemXModel.Store.FK_UserTransaction_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="UserTransaction" EntitySet="UserTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserTransaction_LU_OperationType" Association="SystemXModel.Store.FK_UserTransaction_LU_OperationType">
+            <End Role="LU_OperationType" EntitySet="LU_OperationType" />
+            <End Role="UserTransaction" EntitySet="UserTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserTransaction_NotaryAccount" Association="SystemXModel.Store.FK_UserTransaction_NotaryAccount">
+            <End Role="NotaryAccount" EntitySet="NotaryAccount" />
+            <End Role="UserTransaction" EntitySet="UserTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserTransaction_User" Association="SystemXModel.Store.FK_UserTransaction_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserTransaction" EntitySet="UserTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vehicle_Message" Association="SystemXModel.Store.FK_Vehicle_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="Vehicle" EntitySet="Vehicle" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="bigint" Nullable="false" />
+          <Property Name="LU_BankSeq" Type="int" Nullable="false" />
+          <Property Name="BranchNo" Type="int" />
+          <Property Name="AccountNo" Type="nvarchar" MaxLength="30" />
+          <Property Name="LU_AccountTypeSeq" Type="int" />
+          <Property Name="IBAN" Type="nvarchar" MaxLength="50" />
+          <Property Name="StatusSeq" Type="int" Nullable="false" />
+          <Property Name="InsertedTime" Type="datetime" Nullable="false" />
+          <Property Name="InsertedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UpdatedTime" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Audit">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="bigint" Nullable="false" />
+          <Property Name="TableName" Type="nvarchar" MaxLength="50" />
+          <Property Name="TableRowSeq" Type="bigint" />
+          <Property Name="FieldName" Type="varchar" MaxLength="50" />
+          <Property Name="OldValue" Type="varchar" MaxLength="1500" />
+          <Property Name="InsertedDate" Type="datetime" />
+          <Property Name="InsertedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="CountrySeq" Type="int" />
+          <Property Name="InsertedDate" Type="datetime" />
+          <Property Name="InsertedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="int" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="5" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="InsertedDate" Type="datetime" />
+          <Property Name="InsertedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="County">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="CitySeq" Type="int" />
+          <Property Name="InsertedDate" Type="datetime" />
+          <Property Name="InsertedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdentityNo" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="512" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Surname" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Sex" Type="tinyint" />
+          <Property Name="BirthDate" Type="date" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="MobilePhoneNumber" Type="bigint" Nullable="false" />
+          <Property Name="InsertedDate" Type="datetime" />
+          <Property Name="InsertedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="StatusSeq" Type="int" />
+        </EntityType>
+        <EntityType Name="CustomerAccount">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerSeq" Type="bigint" />
+          <Property Name="AccountSeq" Type="bigint" />
+          <Property Name="InsertedDate" Type="datetime" />
+          <Property Name="InsertedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Estate">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TapuNo" Type="nvarchar" MaxLength="20" />
+          <Property Name="PaftaNo" Type="nvarchar" MaxLength="10" />
+          <Property Name="AdaNo" Type="nvarchar" MaxLength="10" />
+          <Property Name="ParselNo" Type="nvarchar" MaxLength="10" />
+          <Property Name="PayOran" Type="nvarchar" MaxLength="5" />
+          <Property Name="Alan" Type="int" />
+          <Property Name="LU_EstateTypeSeq" Type="int" />
+          <Property Name="ArsaPay" Type="nvarchar" MaxLength="5" />
+          <Property Name="YevmiyeNo" Type="nvarchar" MaxLength="10" />
+          <Property Name="CiltNo" Type="nvarchar" MaxLength="10" />
+          <Property Name="SahifeNo" Type="nvarchar" MaxLength="10" />
+          <Property Name="SiraNo" Type="nvarchar" MaxLength="10" />
+          <Property Name="CountySeq" Type="int" />
+          <Property Name="District" Type="nvarchar" MaxLength="100" />
+          <Property Name="Street" Type="nvarchar" MaxLength="100" />
+          <Property Name="StatusSeq" Type="int" Nullable="false" />
+          <Property Name="InsertedTime" Type="datetime" Nullable="false" />
+          <Property Name="InsertedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UpdatedTime" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="LU_AccountType">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="StatusSeq" Type="int" Nullable="false" />
+          <Property Name="InsertedTime" Type="datetime" Nullable="false" />
+          <Property Name="InsertedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UpdatedTime" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="LU_Bank">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BankName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="StatusSeq" Type="int" Nullable="false" />
+          <Property Name="InsertedTime" Type="datetime" Nullable="false" />
+          <Property Name="InsertedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UpdatedTime" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="LU_EstateType">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="InsertedTime" Type="datetime" Nullable="false" />
+          <Property Name="InsertedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UpdatedTime" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="LU_Item">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="InsertedTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="InsertedBy" Type="datetime" />
+          <Property Name="UpdatedTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedBy" Type="datetime" />
+        </EntityType>
+        <EntityType Name="LU_OperationType">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="StatusSeq" Type="int" Nullable="false" />
+          <Property Name="InsertedTime" Type="datetime" Nullable="false" />
+          <Property Name="InsertedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UpdatedTime" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="LU_ProcessType">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="InsertedTime" Type="datetime" />
+          <Property Name="InsertedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedTime" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="LU_RateType">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="InsertedTime" Type="datetime" Nullable="false" />
+          <Property Name="InsertedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UpdatedTime" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="int" Nullable="false" />
+          <Property Name="Message" Type="nvarchar" MaxLength="1500" />
+          <Property Name="InsertedTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="InsertedBy" Type="datetime" />
+          <Property Name="UpdatedTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedBy" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Notary">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="bigint" Nullable="false" />
+          <Property Name="Code" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="CountySeq" Type="int" />
+          <Property Name="StatusSeq" Type="int" />
+          <Property Name="isPublic" Type="bit" />
+          <Property Name="InsertedDate" Type="datetime" />
+          <Property Name="InsertedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="NotaryAccount">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NotarySeq" Type="bigint" />
+          <Property Name="AccountSeq" Type="bigint" />
+          <Property Name="InsertedDate" Type="datetime" />
+          <Property Name="InsertedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PaymentTransaction">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionID" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="UserSeq" Type="bigint" Nullable="false" />
+          <Property Name="TotalMoney" Type="money" Nullable="false" />
+          <Property Name="ItemSourceSeq" Type="bigint" />
+          <Property Name="LU_ItemSeq" Type="int" />
+          <Property Name="TotalMoneyToSystem" Type="money" Nullable="false" />
+          <Property Name="SystemAccountSeq" Type="bigint" Nullable="false" />
+          <Property Name="StatusSeq" Type="int" Nullable="false" />
+          <Property Name="InsertedTime" Type="datetime" Nullable="false" />
+          <Property Name="InsertedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UpdatedTime" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ProcessApproval">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="bigint" Nullable="false" />
+          <Property Name="CustomerSeq" Type="bigint" Nullable="false" />
+          <Property Name="CorrelationCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CorrelationCodeSentTime" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+          <Property Name="GeneratedAuthenticationCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ReceivedAuthenticationCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="AuthenticationCodeReceivedTime" Type="datetime" />
+          <Property Name="StatusSeq" Type="int" />
+          <Property Name="InsertedTime" Type="datetime" />
+          <Property Name="InsertedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedTime" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="LU_ProcessTypeSeq" Type="int" />
+        </EntityType>
+        <EntityType Name="Rate">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserSeq" Type="bigint" Nullable="false" />
+          <Property Name="LU_RateTypeSeq" Type="int" />
+          <Property Name="LU_ItemSeq" Type="int" />
+          <Property Name="StatusSeq" Type="int" Nullable="false" />
+          <Property Name="InsertedTime" Type="datetime" Nullable="false" />
+          <Property Name="InsertedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UpdatedTime" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="InsertedDate" Type="datetime" />
+          <Property Name="InsertedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Sex">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="tinyint" Nullable="false" />
+          <Property Name="Value" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="SystemAccount">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AccountSeq" Type="bigint" />
+          <Property Name="InsertedDate" Type="datetime" />
+          <Property Name="InsertedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TransactionDetailBuyer">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionID" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="BuyerId" Type="bigint" Nullable="false" />
+          <Property Name="BuyerAccount" Type="bigint" Nullable="false" />
+          <Property Name="BuyerRatio" Type="decimal" Nullable="false" Precision="8" Scale="4" />
+          <Property Name="TotalMoney" Type="money" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="InsertedTime" Type="datetime" Nullable="false" />
+          <Property Name="InsertedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UpdatedTime" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdentityNo" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="512" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Surname" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="MobilePhoneNumber" Type="bigint" Nullable="false" />
+          <Property Name="StatusSeq" Type="int" />
+          <Property Name="RoleSeq" Type="int" />
+          <Property Name="NotarySeq" Type="bigint" />
+          <Property Name="InsertedDate" Type="datetime" />
+          <Property Name="InsertedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UserTransaction">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserSeq" Type="bigint" Nullable="false" />
+          <Property Name="UserAccountSeq" Type="bigint" />
+          <Property Name="TotalMoney" Type="money" Nullable="false" />
+          <Property Name="NotaryAccountSeq" Type="bigint" />
+          <Property Name="LU_OperationTypeSeq" Type="int" />
+          <Property Name="TotalMoneyToSystem" Type="money" Nullable="false" />
+          <Property Name="StatusSeq" Type="int" Nullable="false" />
+          <Property Name="InsertedTime" Type="datetime" Nullable="false" />
+          <Property Name="InsertedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UpdatedTime" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Vehicle">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RuhsatNo" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="SaseNo" Type="nvarchar" MaxLength="20" />
+          <Property Name="Brand" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Model" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="DateOfInTrafic" Type="int" Nullable="false" />
+          <Property Name="Color" Type="nchar" Nullable="false" MaxLength="20" />
+          <Property Name="Kilometer" Type="bigint" Nullable="false" />
+          <Property Name="StatusSeq" Type="int" Nullable="false" />
+          <Property Name="InsertedTime" Type="datetime" Nullable="false" />
+          <Property Name="InsertedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UpdatedTime" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Account_LU_AccountType">
+          <End Role="LU_AccountType" Type="SystemXModel.Store.LU_AccountType" Multiplicity="0..1" />
+          <End Role="Account" Type="SystemXModel.Store.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LU_AccountType">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="LU_AccountTypeSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Account_LU_Bank">
+          <End Role="LU_Bank" Type="SystemXModel.Store.LU_Bank" Multiplicity="1" />
+          <End Role="Account" Type="SystemXModel.Store.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LU_Bank">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="LU_BankSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Account_Message">
+          <End Role="Message" Type="SystemXModel.Store.Message" Multiplicity="1" />
+          <End Role="Account" Type="SystemXModel.Store.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="StatusSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_City_Country">
+          <End Role="Country" Type="SystemXModel.Store.Country" Multiplicity="0..1" />
+          <End Role="City" Type="SystemXModel.Store.City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="CountrySeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_County_City">
+          <End Role="City" Type="SystemXModel.Store.City" Multiplicity="0..1" />
+          <End Role="County" Type="SystemXModel.Store.County" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="County">
+              <PropertyRef Name="CitySeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Message">
+          <End Role="Message" Type="SystemXModel.Store.Message" Multiplicity="0..1" />
+          <End Role="Customer" Type="SystemXModel.Store.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="StatusSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_SEX">
+          <End Role="Sex" Type="SystemXModel.Store.Sex" Multiplicity="0..1" />
+          <End Role="Customer" Type="SystemXModel.Store.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sex">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="Sex" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CustomerAccount_Account">
+          <End Role="Account" Type="SystemXModel.Store.Account" Multiplicity="0..1" />
+          <End Role="CustomerAccount" Type="SystemXModel.Store.CustomerAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="CustomerAccount">
+              <PropertyRef Name="AccountSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CustomerAccount_Customer">
+          <End Role="Customer" Type="SystemXModel.Store.Customer" Multiplicity="0..1" />
+          <End Role="CustomerAccount" Type="SystemXModel.Store.CustomerAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="CustomerAccount">
+              <PropertyRef Name="CustomerSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Estate_County">
+          <End Role="County" Type="SystemXModel.Store.County" Multiplicity="0..1" />
+          <End Role="Estate" Type="SystemXModel.Store.Estate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="County">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Estate">
+              <PropertyRef Name="CountySeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Estate_LU_EstateType">
+          <End Role="LU_EstateType" Type="SystemXModel.Store.LU_EstateType" Multiplicity="0..1" />
+          <End Role="Estate" Type="SystemXModel.Store.Estate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LU_EstateType">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Estate">
+              <PropertyRef Name="LU_EstateTypeSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Estate_Message">
+          <End Role="Message" Type="SystemXModel.Store.Message" Multiplicity="1" />
+          <End Role="Estate" Type="SystemXModel.Store.Estate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Estate">
+              <PropertyRef Name="StatusSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LU_AccountType_Message">
+          <End Role="Message" Type="SystemXModel.Store.Message" Multiplicity="1" />
+          <End Role="LU_AccountType" Type="SystemXModel.Store.LU_AccountType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="LU_AccountType">
+              <PropertyRef Name="StatusSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LU_Bank_Message">
+          <End Role="Message" Type="SystemXModel.Store.Message" Multiplicity="1" />
+          <End Role="LU_Bank" Type="SystemXModel.Store.LU_Bank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="LU_Bank">
+              <PropertyRef Name="StatusSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LU_EstateType_Message">
+          <End Role="Message" Type="SystemXModel.Store.Message" Multiplicity="1" />
+          <End Role="LU_EstateType" Type="SystemXModel.Store.LU_EstateType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="LU_EstateType">
+              <PropertyRef Name="Status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Notary_County">
+          <End Role="County" Type="SystemXModel.Store.County" Multiplicity="0..1" />
+          <End Role="Notary" Type="SystemXModel.Store.Notary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="County">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Notary">
+              <PropertyRef Name="CountySeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Notary_Message">
+          <End Role="Message" Type="SystemXModel.Store.Message" Multiplicity="0..1" />
+          <End Role="Notary" Type="SystemXModel.Store.Notary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Notary">
+              <PropertyRef Name="StatusSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotaryAccount_Account">
+          <End Role="Account" Type="SystemXModel.Store.Account" Multiplicity="0..1" />
+          <End Role="NotaryAccount" Type="SystemXModel.Store.NotaryAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="NotaryAccount">
+              <PropertyRef Name="AccountSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotaryAccount_Notary">
+          <End Role="Notary" Type="SystemXModel.Store.Notary" Multiplicity="0..1" />
+          <End Role="NotaryAccount" Type="SystemXModel.Store.NotaryAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Notary">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="NotaryAccount">
+              <PropertyRef Name="NotarySeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PaymentTransaction_LU_Item">
+          <End Role="LU_Item" Type="SystemXModel.Store.LU_Item" Multiplicity="0..1" />
+          <End Role="PaymentTransaction" Type="SystemXModel.Store.PaymentTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LU_Item">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="PaymentTransaction">
+              <PropertyRef Name="LU_ItemSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PaymentTransaction_Message">
+          <End Role="Message" Type="SystemXModel.Store.Message" Multiplicity="1" />
+          <End Role="PaymentTransaction" Type="SystemXModel.Store.PaymentTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="PaymentTransaction">
+              <PropertyRef Name="StatusSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PaymentTransaction_SystemAccount">
+          <End Role="SystemAccount" Type="SystemXModel.Store.SystemAccount" Multiplicity="1" />
+          <End Role="PaymentTransaction" Type="SystemXModel.Store.PaymentTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SystemAccount">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="PaymentTransaction">
+              <PropertyRef Name="SystemAccountSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PaymentTransaction_User">
+          <End Role="User" Type="SystemXModel.Store.User" Multiplicity="1" />
+          <End Role="PaymentTransaction" Type="SystemXModel.Store.PaymentTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="PaymentTransaction">
+              <PropertyRef Name="UserSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProcessApproval_Customer">
+          <End Role="Customer" Type="SystemXModel.Store.Customer" Multiplicity="1" />
+          <End Role="ProcessApproval" Type="SystemXModel.Store.ProcessApproval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="ProcessApproval">
+              <PropertyRef Name="CustomerSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProcessApproval_LU_ProcessType">
+          <End Role="LU_ProcessType" Type="SystemXModel.Store.LU_ProcessType" Multiplicity="0..1" />
+          <End Role="ProcessApproval" Type="SystemXModel.Store.ProcessApproval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LU_ProcessType">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="ProcessApproval">
+              <PropertyRef Name="LU_ProcessTypeSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProcessApproval_Message">
+          <End Role="Message" Type="SystemXModel.Store.Message" Multiplicity="0..1" />
+          <End Role="ProcessApproval" Type="SystemXModel.Store.ProcessApproval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="ProcessApproval">
+              <PropertyRef Name="StatusSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rate_LU_Item">
+          <End Role="LU_Item" Type="SystemXModel.Store.LU_Item" Multiplicity="0..1" />
+          <End Role="Rate" Type="SystemXModel.Store.Rate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LU_Item">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Rate">
+              <PropertyRef Name="LU_ItemSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rate_LU_RateType">
+          <End Role="LU_RateType" Type="SystemXModel.Store.LU_RateType" Multiplicity="0..1" />
+          <End Role="Rate" Type="SystemXModel.Store.Rate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LU_RateType">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Rate">
+              <PropertyRef Name="LU_RateTypeSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rate_Message">
+          <End Role="Message" Type="SystemXModel.Store.Message" Multiplicity="1" />
+          <End Role="Rate" Type="SystemXModel.Store.Rate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Rate">
+              <PropertyRef Name="StatusSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rate_User">
+          <End Role="User" Type="SystemXModel.Store.User" Multiplicity="1" />
+          <End Role="Rate" Type="SystemXModel.Store.Rate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Rate">
+              <PropertyRef Name="UserSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SystemAccount_Account">
+          <End Role="Account" Type="SystemXModel.Store.Account" Multiplicity="0..1" />
+          <End Role="SystemAccount" Type="SystemXModel.Store.SystemAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="SystemAccount">
+              <PropertyRef Name="AccountSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Message">
+          <End Role="Message" Type="SystemXModel.Store.Message" Multiplicity="0..1" />
+          <End Role="User" Type="SystemXModel.Store.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="StatusSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Message1">
+          <End Role="Message" Type="SystemXModel.Store.Message" Multiplicity="0..1" />
+          <End Role="User" Type="SystemXModel.Store.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="StatusSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Notary">
+          <End Role="Notary" Type="SystemXModel.Store.Notary" Multiplicity="0..1" />
+          <End Role="User" Type="SystemXModel.Store.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Notary">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="NotarySeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Role">
+          <End Role="Role" Type="SystemXModel.Store.Role" Multiplicity="0..1" />
+          <End Role="User" Type="SystemXModel.Store.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="RoleSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserTransaction_Account">
+          <End Role="Account" Type="SystemXModel.Store.Account" Multiplicity="0..1" />
+          <End Role="UserTransaction" Type="SystemXModel.Store.UserTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="UserTransaction">
+              <PropertyRef Name="UserAccountSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserTransaction_LU_OperationType">
+          <End Role="LU_OperationType" Type="SystemXModel.Store.LU_OperationType" Multiplicity="0..1" />
+          <End Role="UserTransaction" Type="SystemXModel.Store.UserTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LU_OperationType">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="UserTransaction">
+              <PropertyRef Name="LU_OperationTypeSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserTransaction_NotaryAccount">
+          <End Role="NotaryAccount" Type="SystemXModel.Store.NotaryAccount" Multiplicity="0..1" />
+          <End Role="UserTransaction" Type="SystemXModel.Store.UserTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NotaryAccount">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="UserTransaction">
+              <PropertyRef Name="NotaryAccountSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserTransaction_User">
+          <End Role="User" Type="SystemXModel.Store.User" Multiplicity="1" />
+          <End Role="UserTransaction" Type="SystemXModel.Store.UserTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="UserTransaction">
+              <PropertyRef Name="UserSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vehicle_Message">
+          <End Role="Message" Type="SystemXModel.Store.Message" Multiplicity="1" />
+          <End Role="Vehicle" Type="SystemXModel.Store.Vehicle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Vehicle">
+              <PropertyRef Name="StatusSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SystemXModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="SystemXEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Account" EntityType="SystemXModel.Account" />
+          <EntitySet Name="Audit" EntityType="SystemXModel.Audit" />
+          <EntitySet Name="City" EntityType="SystemXModel.City" />
+          <EntitySet Name="Country" EntityType="SystemXModel.Country" />
+          <EntitySet Name="County" EntityType="SystemXModel.County" />
+          <EntitySet Name="Customer" EntityType="SystemXModel.Customer" />
+          <EntitySet Name="CustomerAccount" EntityType="SystemXModel.CustomerAccount" />
+          <EntitySet Name="Estate" EntityType="SystemXModel.Estate" />
+          <EntitySet Name="LU_AccountType" EntityType="SystemXModel.LU_AccountType" />
+          <EntitySet Name="LU_Bank" EntityType="SystemXModel.LU_Bank" />
+          <EntitySet Name="LU_EstateType" EntityType="SystemXModel.LU_EstateType" />
+          <EntitySet Name="LU_Item" EntityType="SystemXModel.LU_Item" />
+          <EntitySet Name="LU_OperationType" EntityType="SystemXModel.LU_OperationType" />
+          <EntitySet Name="LU_ProcessType" EntityType="SystemXModel.LU_ProcessType" />
+          <EntitySet Name="LU_RateType" EntityType="SystemXModel.LU_RateType" />
+          <EntitySet Name="Message" EntityType="SystemXModel.Message" />
+          <EntitySet Name="Notary" EntityType="SystemXModel.Notary" />
+          <EntitySet Name="NotaryAccount" EntityType="SystemXModel.NotaryAccount" />
+          <EntitySet Name="PaymentTransaction" EntityType="SystemXModel.PaymentTransaction" />
+          <EntitySet Name="ProcessApproval" EntityType="SystemXModel.ProcessApproval" />
+          <EntitySet Name="Rate" EntityType="SystemXModel.Rate" />
+          <EntitySet Name="Role" EntityType="SystemXModel.Role" />
+          <EntitySet Name="Sex" EntityType="SystemXModel.Sex" />
+          <EntitySet Name="sysdiagrams" EntityType="SystemXModel.sysdiagrams" />
+          <EntitySet Name="SystemAccount" EntityType="SystemXModel.SystemAccount" />
+          <EntitySet Name="TransactionDetailBuyer" EntityType="SystemXModel.TransactionDetailBuyer" />
+          <EntitySet Name="User" EntityType="SystemXModel.User" />
+          <EntitySet Name="UserTransaction" EntityType="SystemXModel.UserTransaction" />
+          <EntitySet Name="Vehicle" EntityType="SystemXModel.Vehicle" />
+          <AssociationSet Name="FK_Account_LU_AccountType" Association="SystemXModel.FK_Account_LU_AccountType">
+            <End Role="LU_AccountType" EntitySet="LU_AccountType" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Account_LU_Bank" Association="SystemXModel.FK_Account_LU_Bank">
+            <End Role="LU_Bank" EntitySet="LU_Bank" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Account_Message" Association="SystemXModel.FK_Account_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CustomerAccount_Account" Association="SystemXModel.FK_CustomerAccount_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="CustomerAccount" EntitySet="CustomerAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotaryAccount_Account" Association="SystemXModel.FK_NotaryAccount_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="NotaryAccount" EntitySet="NotaryAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SystemAccount_Account" Association="SystemXModel.FK_SystemAccount_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="SystemAccount" EntitySet="SystemAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserTransaction_Account" Association="SystemXModel.FK_UserTransaction_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="UserTransaction" EntitySet="UserTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_City_Country" Association="SystemXModel.FK_City_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="City" EntitySet="City" />
+          </AssociationSet>
+          <AssociationSet Name="FK_County_City" Association="SystemXModel.FK_County_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="County" EntitySet="County" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Estate_County" Association="SystemXModel.FK_Estate_County">
+            <End Role="County" EntitySet="County" />
+            <End Role="Estate" EntitySet="Estate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notary_County" Association="SystemXModel.FK_Notary_County">
+            <End Role="County" EntitySet="County" />
+            <End Role="Notary" EntitySet="Notary" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Message" Association="SystemXModel.FK_Customer_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_SEX" Association="SystemXModel.FK_Customer_SEX">
+            <End Role="Sex" EntitySet="Sex" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CustomerAccount_Customer" Association="SystemXModel.FK_CustomerAccount_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="CustomerAccount" EntitySet="CustomerAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProcessApproval_Customer" Association="SystemXModel.FK_ProcessApproval_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="ProcessApproval" EntitySet="ProcessApproval" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Estate_LU_EstateType" Association="SystemXModel.FK_Estate_LU_EstateType">
+            <End Role="LU_EstateType" EntitySet="LU_EstateType" />
+            <End Role="Estate" EntitySet="Estate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Estate_Message" Association="SystemXModel.FK_Estate_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="Estate" EntitySet="Estate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LU_AccountType_Message" Association="SystemXModel.FK_LU_AccountType_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="LU_AccountType" EntitySet="LU_AccountType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LU_Bank_Message" Association="SystemXModel.FK_LU_Bank_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="LU_Bank" EntitySet="LU_Bank" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LU_EstateType_Message" Association="SystemXModel.FK_LU_EstateType_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="LU_EstateType" EntitySet="LU_EstateType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PaymentTransaction_LU_Item" Association="SystemXModel.FK_PaymentTransaction_LU_Item">
+            <End Role="LU_Item" EntitySet="LU_Item" />
+            <End Role="PaymentTransaction" EntitySet="PaymentTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rate_LU_Item" Association="SystemXModel.FK_Rate_LU_Item">
+            <End Role="LU_Item" EntitySet="LU_Item" />
+            <End Role="Rate" EntitySet="Rate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserTransaction_LU_OperationType" Association="SystemXModel.FK_UserTransaction_LU_OperationType">
+            <End Role="LU_OperationType" EntitySet="LU_OperationType" />
+            <End Role="UserTransaction" EntitySet="UserTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProcessApproval_LU_ProcessType" Association="SystemXModel.FK_ProcessApproval_LU_ProcessType">
+            <End Role="LU_ProcessType" EntitySet="LU_ProcessType" />
+            <End Role="ProcessApproval" EntitySet="ProcessApproval" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rate_LU_RateType" Association="SystemXModel.FK_Rate_LU_RateType">
+            <End Role="LU_RateType" EntitySet="LU_RateType" />
+            <End Role="Rate" EntitySet="Rate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notary_Message" Association="SystemXModel.FK_Notary_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="Notary" EntitySet="Notary" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PaymentTransaction_Message" Association="SystemXModel.FK_PaymentTransaction_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="PaymentTransaction" EntitySet="PaymentTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProcessApproval_Message" Association="SystemXModel.FK_ProcessApproval_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="ProcessApproval" EntitySet="ProcessApproval" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rate_Message" Association="SystemXModel.FK_Rate_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="Rate" EntitySet="Rate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Message" Association="SystemXModel.FK_User_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Message1" Association="SystemXModel.FK_User_Message1">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vehicle_Message" Association="SystemXModel.FK_Vehicle_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="Vehicle" EntitySet="Vehicle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotaryAccount_Notary" Association="SystemXModel.FK_NotaryAccount_Notary">
+            <End Role="Notary" EntitySet="Notary" />
+            <End Role="NotaryAccount" EntitySet="NotaryAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Notary" Association="SystemXModel.FK_User_Notary">
+            <End Role="Notary" EntitySet="Notary" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserTransaction_NotaryAccount" Association="SystemXModel.FK_UserTransaction_NotaryAccount">
+            <End Role="NotaryAccount" EntitySet="NotaryAccount" />
+            <End Role="UserTransaction" EntitySet="UserTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PaymentTransaction_SystemAccount" Association="SystemXModel.FK_PaymentTransaction_SystemAccount">
+            <End Role="SystemAccount" EntitySet="SystemAccount" />
+            <End Role="PaymentTransaction" EntitySet="PaymentTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PaymentTransaction_User" Association="SystemXModel.FK_PaymentTransaction_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="PaymentTransaction" EntitySet="PaymentTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rate_User" Association="SystemXModel.FK_Rate_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Rate" EntitySet="Rate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role" Association="SystemXModel.FK_User_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserTransaction_User" Association="SystemXModel.FK_UserTransaction_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="UserTransaction" EntitySet="UserTransaction" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int64" Nullable="false" />
+          <Property Name="LU_BankSeq" Type="Int32" Nullable="false" />
+          <Property Name="BranchNo" Type="Int32" />
+          <Property Name="AccountNo" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="LU_AccountTypeSeq" Type="Int32" />
+          <Property Name="IBAN" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="StatusSeq" Type="Int32" Nullable="false" />
+          <Property Name="InsertedTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="InsertedBy" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="LU_AccountType" Relationship="SystemXModel.FK_Account_LU_AccountType" FromRole="Account" ToRole="LU_AccountType" />
+          <NavigationProperty Name="LU_Bank" Relationship="SystemXModel.FK_Account_LU_Bank" FromRole="Account" ToRole="LU_Bank" />
+          <NavigationProperty Name="Message" Relationship="SystemXModel.FK_Account_Message" FromRole="Account" ToRole="Message" />
+          <NavigationProperty Name="CustomerAccount" Relationship="SystemXModel.FK_CustomerAccount_Account" FromRole="Account" ToRole="CustomerAccount" />
+          <NavigationProperty Name="NotaryAccount" Relationship="SystemXModel.FK_NotaryAccount_Account" FromRole="Account" ToRole="NotaryAccount" />
+          <NavigationProperty Name="SystemAccount" Relationship="SystemXModel.FK_SystemAccount_Account" FromRole="Account" ToRole="SystemAccount" />
+          <NavigationProperty Name="UserTransaction" Relationship="SystemXModel.FK_UserTransaction_Account" FromRole="Account" ToRole="UserTransaction" />
+        </EntityType>
+        <EntityType Name="Audit">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int64" Nullable="false" />
+          <Property Name="TableName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TableRowSeq" Type="Int64" />
+          <Property Name="FieldName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="OldValue" Type="String" MaxLength="1500" Unicode="false" FixedLength="false" />
+          <Property Name="InsertedDate" Type="DateTime" Precision="3" />
+          <Property Name="InsertedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CountrySeq" Type="Int32" />
+          <Property Name="InsertedDate" Type="DateTime" Precision="3" />
+          <Property Name="InsertedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Country" Relationship="SystemXModel.FK_City_Country" FromRole="City" ToRole="Country" />
+          <NavigationProperty Name="County" Relationship="SystemXModel.FK_County_City" FromRole="City" ToRole="County" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int32" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="InsertedDate" Type="DateTime" Precision="3" />
+          <Property Name="InsertedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="City" Relationship="SystemXModel.FK_City_Country" FromRole="Country" ToRole="City" />
+        </EntityType>
+        <EntityType Name="County">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CitySeq" Type="Int32" />
+          <Property Name="InsertedDate" Type="DateTime" Precision="3" />
+          <Property Name="InsertedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="City" Relationship="SystemXModel.FK_County_City" FromRole="County" ToRole="City" />
+          <NavigationProperty Name="Estate" Relationship="SystemXModel.FK_Estate_County" FromRole="County" ToRole="Estate" />
+          <NavigationProperty Name="Notary" Relationship="SystemXModel.FK_Notary_County" FromRole="County" ToRole="Notary" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdentityNo" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Surname" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Sex" Type="Byte" />
+          <Property Name="BirthDate" Type="DateTime" Precision="0" />
+          <Property Name="Email" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="MobilePhoneNumber" Type="Int64" Nullable="false" />
+          <Property Name="InsertedDate" Type="DateTime" Precision="3" />
+          <Property Name="InsertedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="StatusSeq" Type="Int32" />
+          <NavigationProperty Name="Message" Relationship="SystemXModel.FK_Customer_Message" FromRole="Customer" ToRole="Message" />
+          <NavigationProperty Name="Sex1" Relationship="SystemXModel.FK_Customer_SEX" FromRole="Customer" ToRole="Sex" />
+          <NavigationProperty Name="CustomerAccount" Relationship="SystemXModel.FK_CustomerAccount_Customer" FromRole="Customer" ToRole="CustomerAccount" />
+          <NavigationProperty Name="ProcessApproval" Relationship="SystemXModel.FK_ProcessApproval_Customer" FromRole="Customer" ToRole="ProcessApproval" />
+        </EntityType>
+        <EntityType Name="CustomerAccount">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerSeq" Type="Int64" />
+          <Property Name="AccountSeq" Type="Int64" />
+          <Property Name="InsertedDate" Type="DateTime" Precision="3" />
+          <Property Name="InsertedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Account" Relationship="SystemXModel.FK_CustomerAccount_Account" FromRole="CustomerAccount" ToRole="Account" />
+          <NavigationProperty Name="Customer" Relationship="SystemXModel.FK_CustomerAccount_Customer" FromRole="CustomerAccount" ToRole="Customer" />
+        </EntityType>
+        <EntityType Name="Estate">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TapuNo" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="PaftaNo" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="AdaNo" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="ParselNo" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="PayOran" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Alan" Type="Int32" />
+          <Property Name="LU_EstateTypeSeq" Type="Int32" />
+          <Property Name="ArsaPay" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="YevmiyeNo" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="CiltNo" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="SahifeNo" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="SiraNo" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="CountySeq" Type="Int32" />
+          <Property Name="District" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Street" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="StatusSeq" Type="Int32" Nullable="false" />
+          <Property Name="InsertedTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="InsertedBy" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="County" Relationship="SystemXModel.FK_Estate_County" FromRole="Estate" ToRole="County" />
+          <NavigationProperty Name="LU_EstateType" Relationship="SystemXModel.FK_Estate_LU_EstateType" FromRole="Estate" ToRole="LU_EstateType" />
+          <NavigationProperty Name="Message" Relationship="SystemXModel.FK_Estate_Message" FromRole="Estate" ToRole="Message" />
+        </EntityType>
+        <EntityType Name="LU_AccountType">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="StatusSeq" Type="Int32" Nullable="false" />
+          <Property Name="InsertedTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="InsertedBy" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Account" Relationship="SystemXModel.FK_Account_LU_AccountType" FromRole="LU_AccountType" ToRole="Account" />
+          <NavigationProperty Name="Message" Relationship="SystemXModel.FK_LU_AccountType_Message" FromRole="LU_AccountType" ToRole="Message" />
+        </EntityType>
+        <EntityType Name="LU_Bank">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BankName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="StatusSeq" Type="Int32" Nullable="false" />
+          <Property Name="InsertedTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="InsertedBy" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Account" Relationship="SystemXModel.FK_Account_LU_Bank" FromRole="LU_Bank" ToRole="Account" />
+          <NavigationProperty Name="Message" Relationship="SystemXModel.FK_LU_Bank_Message" FromRole="LU_Bank" ToRole="Message" />
+        </EntityType>
+        <EntityType Name="LU_EstateType">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="InsertedTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="InsertedBy" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Estate" Relationship="SystemXModel.FK_Estate_LU_EstateType" FromRole="LU_EstateType" ToRole="Estate" />
+          <NavigationProperty Name="Message" Relationship="SystemXModel.FK_LU_EstateType_Message" FromRole="LU_EstateType" ToRole="Message" />
+        </EntityType>
+        <EntityType Name="LU_Item">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="InsertedTime" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="InsertedBy" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedTime" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedBy" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="PaymentTransaction" Relationship="SystemXModel.FK_PaymentTransaction_LU_Item" FromRole="LU_Item" ToRole="PaymentTransaction" />
+          <NavigationProperty Name="Rate" Relationship="SystemXModel.FK_Rate_LU_Item" FromRole="LU_Item" ToRole="Rate" />
+        </EntityType>
+        <EntityType Name="LU_OperationType">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="StatusSeq" Type="Int32" Nullable="false" />
+          <Property Name="InsertedTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="InsertedBy" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="UserTransaction" Relationship="SystemXModel.FK_UserTransaction_LU_OperationType" FromRole="LU_OperationType" ToRole="UserTransaction" />
+        </EntityType>
+        <EntityType Name="LU_ProcessType">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="InsertedTime" Type="DateTime" Precision="3" />
+          <Property Name="InsertedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ProcessApproval" Relationship="SystemXModel.FK_ProcessApproval_LU_ProcessType" FromRole="LU_ProcessType" ToRole="ProcessApproval" />
+        </EntityType>
+        <EntityType Name="LU_RateType">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="InsertedTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="InsertedBy" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Rate" Relationship="SystemXModel.FK_Rate_LU_RateType" FromRole="LU_RateType" ToRole="Rate" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int32" Nullable="false" />
+          <Property Name="Message1" Type="String" MaxLength="1500" Unicode="true" FixedLength="false" />
+          <Property Name="InsertedTime" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="InsertedBy" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedTime" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedBy" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Account" Relationship="SystemXModel.FK_Account_Message" FromRole="Message" ToRole="Account" />
+          <NavigationProperty Name="Customer" Relationship="SystemXModel.FK_Customer_Message" FromRole="Message" ToRole="Customer" />
+          <NavigationProperty Name="Estate" Relationship="SystemXModel.FK_Estate_Message" FromRole="Message" ToRole="Estate" />
+          <NavigationProperty Name="LU_AccountType" Relationship="SystemXModel.FK_LU_AccountType_Message" FromRole="Message" ToRole="LU_AccountType" />
+          <NavigationProperty Name="LU_Bank" Relationship="SystemXModel.FK_LU_Bank_Message" FromRole="Message" ToRole="LU_Bank" />
+          <NavigationProperty Name="LU_EstateType" Relationship="SystemXModel.FK_LU_EstateType_Message" FromRole="Message" ToRole="LU_EstateType" />
+          <NavigationProperty Name="Notary" Relationship="SystemXModel.FK_Notary_Message" FromRole="Message" ToRole="Notary" />
+          <NavigationProperty Name="PaymentTransaction" Relationship="SystemXModel.FK_PaymentTransaction_Message" FromRole="Message" ToRole="PaymentTransaction" />
+          <NavigationProperty Name="ProcessApproval" Relationship="SystemXModel.FK_ProcessApproval_Message" FromRole="Message" ToRole="ProcessApproval" />
+          <NavigationProperty Name="Rate" Relationship="SystemXModel.FK_Rate_Message" FromRole="Message" ToRole="Rate" />
+          <NavigationProperty Name="User" Relationship="SystemXModel.FK_User_Message" FromRole="Message" ToRole="User" />
+          <NavigationProperty Name="User1" Relationship="SystemXModel.FK_User_Message1" FromRole="Message" ToRole="User" />
+          <NavigationProperty Name="Vehicle" Relationship="SystemXModel.FK_Vehicle_Message" FromRole="Message" ToRole="Vehicle" />
+        </EntityType>
+        <EntityType Name="Notary">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int64" Nullable="false" />
+          <Property Name="Code" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CountySeq" Type="Int32" />
+          <Property Name="StatusSeq" Type="Int32" />
+          <Property Name="isPublic" Type="Boolean" />
+          <Property Name="InsertedDate" Type="DateTime" Precision="3" />
+          <Property Name="InsertedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="County" Relationship="SystemXModel.FK_Notary_County" FromRole="Notary" ToRole="County" />
+          <NavigationProperty Name="Message" Relationship="SystemXModel.FK_Notary_Message" FromRole="Notary" ToRole="Message" />
+          <NavigationProperty Name="NotaryAccount" Relationship="SystemXModel.FK_NotaryAccount_Notary" FromRole="Notary" ToRole="NotaryAccount" />
+          <NavigationProperty Name="User" Relationship="SystemXModel.FK_User_Notary" FromRole="Notary" ToRole="User" />
+        </EntityType>
+        <EntityType Name="NotaryAccount">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NotarySeq" Type="Int64" />
+          <Property Name="AccountSeq" Type="Int64" />
+          <Property Name="InsertedDate" Type="DateTime" Precision="3" />
+          <Property Name="InsertedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Account" Relationship="SystemXModel.FK_NotaryAccount_Account" FromRole="NotaryAccount" ToRole="Account" />
+          <NavigationProperty Name="Notary" Relationship="SystemXModel.FK_NotaryAccount_Notary" FromRole="NotaryAccount" ToRole="Notary" />
+          <NavigationProperty Name="UserTransaction" Relationship="SystemXModel.FK_UserTransaction_NotaryAccount" FromRole="NotaryAccount" ToRole="UserTransaction" />
+        </EntityType>
+        <EntityType Name="PaymentTransaction">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionID" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="UserSeq" Type="Int64" Nullable="false" />
+          <Property Name="TotalMoney" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="ItemSourceSeq" Type="Int64" />
+          <Property Name="LU_ItemSeq" Type="Int32" />
+          <Property Name="TotalMoneyToSystem" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="SystemAccountSeq" Type="Int64" Nullable="false" />
+          <Property Name="StatusSeq" Type="Int32" Nullable="false" />
+          <Property Name="InsertedTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="InsertedBy" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="LU_Item" Relationship="SystemXModel.FK_PaymentTransaction_LU_Item" FromRole="PaymentTransaction" ToRole="LU_Item" />
+          <NavigationProperty Name="Message" Relationship="SystemXModel.FK_PaymentTransaction_Message" FromRole="PaymentTransaction" ToRole="Message" />
+          <NavigationProperty Name="SystemAccount" Relationship="SystemXModel.FK_PaymentTransaction_SystemAccount" FromRole="PaymentTransaction" ToRole="SystemAccount" />
+          <NavigationProperty Name="User" Relationship="SystemXModel.FK_PaymentTransaction_User" FromRole="PaymentTransaction" ToRole="User" />
+        </EntityType>
+        <EntityType Name="ProcessApproval">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int64" Nullable="false" />
+          <Property Name="CustomerSeq" Type="Int64" Nullable="false" />
+          <Property Name="CorrelationCode" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CorrelationCodeSentTime" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="GeneratedAuthenticationCode" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ReceivedAuthenticationCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="AuthenticationCodeReceivedTime" Type="DateTime" Precision="3" />
+          <Property Name="StatusSeq" Type="Int32" />
+          <Property Name="InsertedTime" Type="DateTime" Precision="3" />
+          <Property Name="InsertedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LU_ProcessTypeSeq" Type="Int32" />
+          <NavigationProperty Name="Customer" Relationship="SystemXModel.FK_ProcessApproval_Customer" FromRole="ProcessApproval" ToRole="Customer" />
+          <NavigationProperty Name="LU_ProcessType" Relationship="SystemXModel.FK_ProcessApproval_LU_ProcessType" FromRole="ProcessApproval" ToRole="LU_ProcessType" />
+          <NavigationProperty Name="Message" Relationship="SystemXModel.FK_ProcessApproval_Message" FromRole="ProcessApproval" ToRole="Message" />
+        </EntityType>
+        <EntityType Name="Rate">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserSeq" Type="Int64" Nullable="false" />
+          <Property Name="LU_RateTypeSeq" Type="Int32" />
+          <Property Name="LU_ItemSeq" Type="Int32" />
+          <Property Name="StatusSeq" Type="Int32" Nullable="false" />
+          <Property Name="InsertedTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="InsertedBy" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="LU_Item" Relationship="SystemXModel.FK_Rate_LU_Item" FromRole="Rate" ToRole="LU_Item" />
+          <NavigationProperty Name="LU_RateType" Relationship="SystemXModel.FK_Rate_LU_RateType" FromRole="Rate" ToRole="LU_RateType" />
+          <NavigationProperty Name="Message" Relationship="SystemXModel.FK_Rate_Message" FromRole="Rate" ToRole="Message" />
+          <NavigationProperty Name="User" Relationship="SystemXModel.FK_Rate_User" FromRole="Rate" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="InsertedDate" Type="DateTime" Precision="3" />
+          <Property Name="InsertedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="User" Relationship="SystemXModel.FK_User_Role" FromRole="Role" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Sex">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Byte" Nullable="false" />
+          <Property Name="Value" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Customer" Relationship="SystemXModel.FK_Customer_SEX" FromRole="Sex" ToRole="Customer" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SystemAccount">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountSeq" Type="Int64" />
+          <Property Name="InsertedDate" Type="DateTime" Precision="3" />
+          <Property Name="InsertedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Account" Relationship="SystemXModel.FK_SystemAccount_Account" FromRole="SystemAccount" ToRole="Account" />
+          <NavigationProperty Name="PaymentTransaction" Relationship="SystemXModel.FK_PaymentTransaction_SystemAccount" FromRole="SystemAccount" ToRole="PaymentTransaction" />
+        </EntityType>
+        <EntityType Name="TransactionDetailBuyer">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionID" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="BuyerId" Type="Int64" Nullable="false" />
+          <Property Name="BuyerAccount" Type="Int64" Nullable="false" />
+          <Property Name="BuyerRatio" Type="Decimal" Nullable="false" Precision="8" Scale="4" />
+          <Property Name="TotalMoney" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="InsertedTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="InsertedBy" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdentityNo" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Surname" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="MobilePhoneNumber" Type="Int64" Nullable="false" />
+          <Property Name="StatusSeq" Type="Int32" />
+          <Property Name="RoleSeq" Type="Int32" />
+          <Property Name="NotarySeq" Type="Int64" />
+          <Property Name="InsertedDate" Type="DateTime" Precision="3" />
+          <Property Name="InsertedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Message" Relationship="SystemXModel.FK_User_Message" FromRole="User" ToRole="Message" />
+          <NavigationProperty Name="Message1" Relationship="SystemXModel.FK_User_Message1" FromRole="User" ToRole="Message" />
+          <NavigationProperty Name="Notary" Relationship="SystemXModel.FK_User_Notary" FromRole="User" ToRole="Notary" />
+          <NavigationProperty Name="PaymentTransaction" Relationship="SystemXModel.FK_PaymentTransaction_User" FromRole="User" ToRole="PaymentTransaction" />
+          <NavigationProperty Name="Rate" Relationship="SystemXModel.FK_Rate_User" FromRole="User" ToRole="Rate" />
+          <NavigationProperty Name="Role" Relationship="SystemXModel.FK_User_Role" FromRole="User" ToRole="Role" />
+          <NavigationProperty Name="UserTransaction" Relationship="SystemXModel.FK_UserTransaction_User" FromRole="User" ToRole="UserTransaction" />
+        </EntityType>
+        <EntityType Name="UserTransaction">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserSeq" Type="Int64" Nullable="false" />
+          <Property Name="UserAccountSeq" Type="Int64" />
+          <Property Name="TotalMoney" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="NotaryAccountSeq" Type="Int64" />
+          <Property Name="LU_OperationTypeSeq" Type="Int32" />
+          <Property Name="TotalMoneyToSystem" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="StatusSeq" Type="Int32" Nullable="false" />
+          <Property Name="InsertedTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="InsertedBy" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Account" Relationship="SystemXModel.FK_UserTransaction_Account" FromRole="UserTransaction" ToRole="Account" />
+          <NavigationProperty Name="LU_OperationType" Relationship="SystemXModel.FK_UserTransaction_LU_OperationType" FromRole="UserTransaction" ToRole="LU_OperationType" />
+          <NavigationProperty Name="NotaryAccount" Relationship="SystemXModel.FK_UserTransaction_NotaryAccount" FromRole="UserTransaction" ToRole="NotaryAccount" />
+          <NavigationProperty Name="User" Relationship="SystemXModel.FK_UserTransaction_User" FromRole="UserTransaction" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Vehicle">
+          <Key>
+            <PropertyRef Name="Seq" />
+          </Key>
+          <Property Name="Seq" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RuhsatNo" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="SaseNo" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Brand" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Model" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DateOfInTrafic" Type="Int32" Nullable="false" />
+          <Property Name="Color" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="true" />
+          <Property Name="Kilometer" Type="Int64" Nullable="false" />
+          <Property Name="StatusSeq" Type="Int32" Nullable="false" />
+          <Property Name="InsertedTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="InsertedBy" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UpdatedTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Message" Relationship="SystemXModel.FK_Vehicle_Message" FromRole="Vehicle" ToRole="Message" />
+        </EntityType>
+        <Association Name="FK_Account_LU_AccountType">
+          <End Role="LU_AccountType" Type="SystemXModel.LU_AccountType" Multiplicity="0..1" />
+          <End Role="Account" Type="SystemXModel.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LU_AccountType">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="LU_AccountTypeSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Account_LU_Bank">
+          <End Role="LU_Bank" Type="SystemXModel.LU_Bank" Multiplicity="1" />
+          <End Role="Account" Type="SystemXModel.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LU_Bank">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="LU_BankSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Account_Message">
+          <End Role="Message" Type="SystemXModel.Message" Multiplicity="1" />
+          <End Role="Account" Type="SystemXModel.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="StatusSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CustomerAccount_Account">
+          <End Role="Account" Type="SystemXModel.Account" Multiplicity="0..1" />
+          <End Role="CustomerAccount" Type="SystemXModel.CustomerAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="CustomerAccount">
+              <PropertyRef Name="AccountSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotaryAccount_Account">
+          <End Role="Account" Type="SystemXModel.Account" Multiplicity="0..1" />
+          <End Role="NotaryAccount" Type="SystemXModel.NotaryAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="NotaryAccount">
+              <PropertyRef Name="AccountSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SystemAccount_Account">
+          <End Role="Account" Type="SystemXModel.Account" Multiplicity="0..1" />
+          <End Role="SystemAccount" Type="SystemXModel.SystemAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="SystemAccount">
+              <PropertyRef Name="AccountSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserTransaction_Account">
+          <End Role="Account" Type="SystemXModel.Account" Multiplicity="0..1" />
+          <End Role="UserTransaction" Type="SystemXModel.UserTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="UserTransaction">
+              <PropertyRef Name="UserAccountSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_City_Country">
+          <End Role="Country" Type="SystemXModel.Country" Multiplicity="0..1" />
+          <End Role="City" Type="SystemXModel.City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="CountrySeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_County_City">
+          <End Role="City" Type="SystemXModel.City" Multiplicity="0..1" />
+          <End Role="County" Type="SystemXModel.County" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="County">
+              <PropertyRef Name="CitySeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Estate_County">
+          <End Role="County" Type="SystemXModel.County" Multiplicity="0..1" />
+          <End Role="Estate" Type="SystemXModel.Estate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="County">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Estate">
+              <PropertyRef Name="CountySeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Notary_County">
+          <End Role="County" Type="SystemXModel.County" Multiplicity="0..1" />
+          <End Role="Notary" Type="SystemXModel.Notary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="County">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Notary">
+              <PropertyRef Name="CountySeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Message">
+          <End Role="Message" Type="SystemXModel.Message" Multiplicity="0..1" />
+          <End Role="Customer" Type="SystemXModel.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="StatusSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_SEX">
+          <End Role="Sex" Type="SystemXModel.Sex" Multiplicity="0..1" />
+          <End Role="Customer" Type="SystemXModel.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sex">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="Sex" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CustomerAccount_Customer">
+          <End Role="Customer" Type="SystemXModel.Customer" Multiplicity="0..1" />
+          <End Role="CustomerAccount" Type="SystemXModel.CustomerAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="CustomerAccount">
+              <PropertyRef Name="CustomerSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProcessApproval_Customer">
+          <End Role="Customer" Type="SystemXModel.Customer" Multiplicity="1" />
+          <End Role="ProcessApproval" Type="SystemXModel.ProcessApproval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="ProcessApproval">
+              <PropertyRef Name="CustomerSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Estate_LU_EstateType">
+          <End Role="LU_EstateType" Type="SystemXModel.LU_EstateType" Multiplicity="0..1" />
+          <End Role="Estate" Type="SystemXModel.Estate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LU_EstateType">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Estate">
+              <PropertyRef Name="LU_EstateTypeSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Estate_Message">
+          <End Role="Message" Type="SystemXModel.Message" Multiplicity="1" />
+          <End Role="Estate" Type="SystemXModel.Estate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Estate">
+              <PropertyRef Name="StatusSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LU_AccountType_Message">
+          <End Role="Message" Type="SystemXModel.Message" Multiplicity="1" />
+          <End Role="LU_AccountType" Type="SystemXModel.LU_AccountType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="LU_AccountType">
+              <PropertyRef Name="StatusSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LU_Bank_Message">
+          <End Role="Message" Type="SystemXModel.Message" Multiplicity="1" />
+          <End Role="LU_Bank" Type="SystemXModel.LU_Bank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="LU_Bank">
+              <PropertyRef Name="StatusSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LU_EstateType_Message">
+          <End Role="Message" Type="SystemXModel.Message" Multiplicity="1" />
+          <End Role="LU_EstateType" Type="SystemXModel.LU_EstateType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="LU_EstateType">
+              <PropertyRef Name="Status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PaymentTransaction_LU_Item">
+          <End Role="LU_Item" Type="SystemXModel.LU_Item" Multiplicity="0..1" />
+          <End Role="PaymentTransaction" Type="SystemXModel.PaymentTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LU_Item">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="PaymentTransaction">
+              <PropertyRef Name="LU_ItemSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rate_LU_Item">
+          <End Role="LU_Item" Type="SystemXModel.LU_Item" Multiplicity="0..1" />
+          <End Role="Rate" Type="SystemXModel.Rate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LU_Item">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Rate">
+              <PropertyRef Name="LU_ItemSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserTransaction_LU_OperationType">
+          <End Role="LU_OperationType" Type="SystemXModel.LU_OperationType" Multiplicity="0..1" />
+          <End Role="UserTransaction" Type="SystemXModel.UserTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LU_OperationType">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="UserTransaction">
+              <PropertyRef Name="LU_OperationTypeSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProcessApproval_LU_ProcessType">
+          <End Role="LU_ProcessType" Type="SystemXModel.LU_ProcessType" Multiplicity="0..1" />
+          <End Role="ProcessApproval" Type="SystemXModel.ProcessApproval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LU_ProcessType">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="ProcessApproval">
+              <PropertyRef Name="LU_ProcessTypeSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rate_LU_RateType">
+          <End Role="LU_RateType" Type="SystemXModel.LU_RateType" Multiplicity="0..1" />
+          <End Role="Rate" Type="SystemXModel.Rate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LU_RateType">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Rate">
+              <PropertyRef Name="LU_RateTypeSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Notary_Message">
+          <End Role="Message" Type="SystemXModel.Message" Multiplicity="0..1" />
+          <End Role="Notary" Type="SystemXModel.Notary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Notary">
+              <PropertyRef Name="StatusSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PaymentTransaction_Message">
+          <End Role="Message" Type="SystemXModel.Message" Multiplicity="1" />
+          <End Role="PaymentTransaction" Type="SystemXModel.PaymentTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="PaymentTransaction">
+              <PropertyRef Name="StatusSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProcessApproval_Message">
+          <End Role="Message" Type="SystemXModel.Message" Multiplicity="0..1" />
+          <End Role="ProcessApproval" Type="SystemXModel.ProcessApproval" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="ProcessApproval">
+              <PropertyRef Name="StatusSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rate_Message">
+          <End Role="Message" Type="SystemXModel.Message" Multiplicity="1" />
+          <End Role="Rate" Type="SystemXModel.Rate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Rate">
+              <PropertyRef Name="StatusSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Message">
+          <End Role="Message" Type="SystemXModel.Message" Multiplicity="0..1" />
+          <End Role="User" Type="SystemXModel.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="StatusSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Message1">
+          <End Role="Message" Type="SystemXModel.Message" Multiplicity="0..1" />
+          <End Role="User" Type="SystemXModel.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="StatusSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vehicle_Message">
+          <End Role="Message" Type="SystemXModel.Message" Multiplicity="1" />
+          <End Role="Vehicle" Type="SystemXModel.Vehicle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Vehicle">
+              <PropertyRef Name="StatusSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotaryAccount_Notary">
+          <End Role="Notary" Type="SystemXModel.Notary" Multiplicity="0..1" />
+          <End Role="NotaryAccount" Type="SystemXModel.NotaryAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Notary">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="NotaryAccount">
+              <PropertyRef Name="NotarySeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Notary">
+          <End Role="Notary" Type="SystemXModel.Notary" Multiplicity="0..1" />
+          <End Role="User" Type="SystemXModel.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Notary">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="NotarySeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserTransaction_NotaryAccount">
+          <End Role="NotaryAccount" Type="SystemXModel.NotaryAccount" Multiplicity="0..1" />
+          <End Role="UserTransaction" Type="SystemXModel.UserTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NotaryAccount">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="UserTransaction">
+              <PropertyRef Name="NotaryAccountSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PaymentTransaction_SystemAccount">
+          <End Role="SystemAccount" Type="SystemXModel.SystemAccount" Multiplicity="1" />
+          <End Role="PaymentTransaction" Type="SystemXModel.PaymentTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SystemAccount">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="PaymentTransaction">
+              <PropertyRef Name="SystemAccountSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PaymentTransaction_User">
+          <End Role="User" Type="SystemXModel.User" Multiplicity="1" />
+          <End Role="PaymentTransaction" Type="SystemXModel.PaymentTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="PaymentTransaction">
+              <PropertyRef Name="UserSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rate_User">
+          <End Role="User" Type="SystemXModel.User" Multiplicity="1" />
+          <End Role="Rate" Type="SystemXModel.Rate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="Rate">
+              <PropertyRef Name="UserSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Role">
+          <End Role="Role" Type="SystemXModel.Role" Multiplicity="0..1" />
+          <End Role="User" Type="SystemXModel.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="RoleSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserTransaction_User">
+          <End Role="User" Type="SystemXModel.User" Multiplicity="1" />
+          <End Role="UserTransaction" Type="SystemXModel.UserTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Seq" />
+            </Principal>
+            <Dependent Role="UserTransaction">
+              <PropertyRef Name="UserSeq" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SystemXModelStoreContainer" CdmEntityContainer="SystemXEntities">
+          <EntitySetMapping Name="Account">
+            <EntityTypeMapping TypeName="SystemXModel.Account">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="LU_BankSeq" ColumnName="LU_BankSeq" />
+                <ScalarProperty Name="BranchNo" ColumnName="BranchNo" />
+                <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+                <ScalarProperty Name="LU_AccountTypeSeq" ColumnName="LU_AccountTypeSeq" />
+                <ScalarProperty Name="IBAN" ColumnName="IBAN" />
+                <ScalarProperty Name="StatusSeq" ColumnName="StatusSeq" />
+                <ScalarProperty Name="InsertedTime" ColumnName="InsertedTime" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedTime" ColumnName="UpdatedTime" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Audit">
+            <EntityTypeMapping TypeName="SystemXModel.Audit">
+              <MappingFragment StoreEntitySet="Audit">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="TableRowSeq" ColumnName="TableRowSeq" />
+                <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+                <ScalarProperty Name="OldValue" ColumnName="OldValue" />
+                <ScalarProperty Name="InsertedDate" ColumnName="InsertedDate" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="City">
+            <EntityTypeMapping TypeName="SystemXModel.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CountrySeq" ColumnName="CountrySeq" />
+                <ScalarProperty Name="InsertedDate" ColumnName="InsertedDate" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Country">
+            <EntityTypeMapping TypeName="SystemXModel.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="InsertedDate" ColumnName="InsertedDate" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="County">
+            <EntityTypeMapping TypeName="SystemXModel.County">
+              <MappingFragment StoreEntitySet="County">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CitySeq" ColumnName="CitySeq" />
+                <ScalarProperty Name="InsertedDate" ColumnName="InsertedDate" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer">
+            <EntityTypeMapping TypeName="SystemXModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="IdentityNo" ColumnName="IdentityNo" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobilePhoneNumber" ColumnName="MobilePhoneNumber" />
+                <ScalarProperty Name="InsertedDate" ColumnName="InsertedDate" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="StatusSeq" ColumnName="StatusSeq" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerAccount">
+            <EntityTypeMapping TypeName="SystemXModel.CustomerAccount">
+              <MappingFragment StoreEntitySet="CustomerAccount">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="CustomerSeq" ColumnName="CustomerSeq" />
+                <ScalarProperty Name="AccountSeq" ColumnName="AccountSeq" />
+                <ScalarProperty Name="InsertedDate" ColumnName="InsertedDate" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estate">
+            <EntityTypeMapping TypeName="SystemXModel.Estate">
+              <MappingFragment StoreEntitySet="Estate">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="TapuNo" ColumnName="TapuNo" />
+                <ScalarProperty Name="PaftaNo" ColumnName="PaftaNo" />
+                <ScalarProperty Name="AdaNo" ColumnName="AdaNo" />
+                <ScalarProperty Name="ParselNo" ColumnName="ParselNo" />
+                <ScalarProperty Name="PayOran" ColumnName="PayOran" />
+                <ScalarProperty Name="Alan" ColumnName="Alan" />
+                <ScalarProperty Name="LU_EstateTypeSeq" ColumnName="LU_EstateTypeSeq" />
+                <ScalarProperty Name="ArsaPay" ColumnName="ArsaPay" />
+                <ScalarProperty Name="YevmiyeNo" ColumnName="YevmiyeNo" />
+                <ScalarProperty Name="CiltNo" ColumnName="CiltNo" />
+                <ScalarProperty Name="SahifeNo" ColumnName="SahifeNo" />
+                <ScalarProperty Name="SiraNo" ColumnName="SiraNo" />
+                <ScalarProperty Name="CountySeq" ColumnName="CountySeq" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="StatusSeq" ColumnName="StatusSeq" />
+                <ScalarProperty Name="InsertedTime" ColumnName="InsertedTime" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedTime" ColumnName="UpdatedTime" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LU_AccountType">
+            <EntityTypeMapping TypeName="SystemXModel.LU_AccountType">
+              <MappingFragment StoreEntitySet="LU_AccountType">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="StatusSeq" ColumnName="StatusSeq" />
+                <ScalarProperty Name="InsertedTime" ColumnName="InsertedTime" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedTime" ColumnName="UpdatedTime" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LU_Bank">
+            <EntityTypeMapping TypeName="SystemXModel.LU_Bank">
+              <MappingFragment StoreEntitySet="LU_Bank">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="StatusSeq" ColumnName="StatusSeq" />
+                <ScalarProperty Name="InsertedTime" ColumnName="InsertedTime" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedTime" ColumnName="UpdatedTime" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LU_EstateType">
+            <EntityTypeMapping TypeName="SystemXModel.LU_EstateType">
+              <MappingFragment StoreEntitySet="LU_EstateType">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="InsertedTime" ColumnName="InsertedTime" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedTime" ColumnName="UpdatedTime" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LU_Item">
+            <EntityTypeMapping TypeName="SystemXModel.LU_Item">
+              <MappingFragment StoreEntitySet="LU_Item">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="InsertedTime" ColumnName="InsertedTime" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedTime" ColumnName="UpdatedTime" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LU_OperationType">
+            <EntityTypeMapping TypeName="SystemXModel.LU_OperationType">
+              <MappingFragment StoreEntitySet="LU_OperationType">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="StatusSeq" ColumnName="StatusSeq" />
+                <ScalarProperty Name="InsertedTime" ColumnName="InsertedTime" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedTime" ColumnName="UpdatedTime" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LU_ProcessType">
+            <EntityTypeMapping TypeName="SystemXModel.LU_ProcessType">
+              <MappingFragment StoreEntitySet="LU_ProcessType">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="InsertedTime" ColumnName="InsertedTime" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedTime" ColumnName="UpdatedTime" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LU_RateType">
+            <EntityTypeMapping TypeName="SystemXModel.LU_RateType">
+              <MappingFragment StoreEntitySet="LU_RateType">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="InsertedTime" ColumnName="InsertedTime" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedTime" ColumnName="UpdatedTime" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Message">
+            <EntityTypeMapping TypeName="SystemXModel.Message">
+              <MappingFragment StoreEntitySet="Message">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="Message1" ColumnName="Message" />
+                <ScalarProperty Name="InsertedTime" ColumnName="InsertedTime" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedTime" ColumnName="UpdatedTime" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notary">
+            <EntityTypeMapping TypeName="SystemXModel.Notary">
+              <MappingFragment StoreEntitySet="Notary">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CountySeq" ColumnName="CountySeq" />
+                <ScalarProperty Name="StatusSeq" ColumnName="StatusSeq" />
+                <ScalarProperty Name="isPublic" ColumnName="isPublic" />
+                <ScalarProperty Name="InsertedDate" ColumnName="InsertedDate" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NotaryAccount">
+            <EntityTypeMapping TypeName="SystemXModel.NotaryAccount">
+              <MappingFragment StoreEntitySet="NotaryAccount">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="NotarySeq" ColumnName="NotarySeq" />
+                <ScalarProperty Name="AccountSeq" ColumnName="AccountSeq" />
+                <ScalarProperty Name="InsertedDate" ColumnName="InsertedDate" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentTransaction">
+            <EntityTypeMapping TypeName="SystemXModel.PaymentTransaction">
+              <MappingFragment StoreEntitySet="PaymentTransaction">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="UserSeq" ColumnName="UserSeq" />
+                <ScalarProperty Name="TotalMoney" ColumnName="TotalMoney" />
+                <ScalarProperty Name="ItemSourceSeq" ColumnName="ItemSourceSeq" />
+                <ScalarProperty Name="LU_ItemSeq" ColumnName="LU_ItemSeq" />
+                <ScalarProperty Name="TotalMoneyToSystem" ColumnName="TotalMoneyToSystem" />
+                <ScalarProperty Name="SystemAccountSeq" ColumnName="SystemAccountSeq" />
+                <ScalarProperty Name="StatusSeq" ColumnName="StatusSeq" />
+                <ScalarProperty Name="InsertedTime" ColumnName="InsertedTime" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedTime" ColumnName="UpdatedTime" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProcessApproval">
+            <EntityTypeMapping TypeName="SystemXModel.ProcessApproval">
+              <MappingFragment StoreEntitySet="ProcessApproval">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="CustomerSeq" ColumnName="CustomerSeq" />
+                <ScalarProperty Name="CorrelationCode" ColumnName="CorrelationCode" />
+                <ScalarProperty Name="CorrelationCodeSentTime" ColumnName="CorrelationCodeSentTime" />
+                <ScalarProperty Name="GeneratedAuthenticationCode" ColumnName="GeneratedAuthenticationCode" />
+                <ScalarProperty Name="ReceivedAuthenticationCode" ColumnName="ReceivedAuthenticationCode" />
+                <ScalarProperty Name="AuthenticationCodeReceivedTime" ColumnName="AuthenticationCodeReceivedTime" />
+                <ScalarProperty Name="StatusSeq" ColumnName="StatusSeq" />
+                <ScalarProperty Name="InsertedTime" ColumnName="InsertedTime" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedTime" ColumnName="UpdatedTime" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="LU_ProcessTypeSeq" ColumnName="LU_ProcessTypeSeq" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rate">
+            <EntityTypeMapping TypeName="SystemXModel.Rate">
+              <MappingFragment StoreEntitySet="Rate">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="UserSeq" ColumnName="UserSeq" />
+                <ScalarProperty Name="LU_RateTypeSeq" ColumnName="LU_RateTypeSeq" />
+                <ScalarProperty Name="LU_ItemSeq" ColumnName="LU_ItemSeq" />
+                <ScalarProperty Name="StatusSeq" ColumnName="StatusSeq" />
+                <ScalarProperty Name="InsertedTime" ColumnName="InsertedTime" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedTime" ColumnName="UpdatedTime" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="SystemXModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="InsertedDate" ColumnName="InsertedDate" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sex">
+            <EntityTypeMapping TypeName="SystemXModel.Sex">
+              <MappingFragment StoreEntitySet="Sex">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="SystemXModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemAccount">
+            <EntityTypeMapping TypeName="SystemXModel.SystemAccount">
+              <MappingFragment StoreEntitySet="SystemAccount">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="AccountSeq" ColumnName="AccountSeq" />
+                <ScalarProperty Name="InsertedDate" ColumnName="InsertedDate" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransactionDetailBuyer">
+            <EntityTypeMapping TypeName="SystemXModel.TransactionDetailBuyer">
+              <MappingFragment StoreEntitySet="TransactionDetailBuyer">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="BuyerId" ColumnName="BuyerId" />
+                <ScalarProperty Name="BuyerAccount" ColumnName="BuyerAccount" />
+                <ScalarProperty Name="BuyerRatio" ColumnName="BuyerRatio" />
+                <ScalarProperty Name="TotalMoney" ColumnName="TotalMoney" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="InsertedTime" ColumnName="InsertedTime" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedTime" ColumnName="UpdatedTime" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="SystemXModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="IdentityNo" ColumnName="IdentityNo" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobilePhoneNumber" ColumnName="MobilePhoneNumber" />
+                <ScalarProperty Name="StatusSeq" ColumnName="StatusSeq" />
+                <ScalarProperty Name="RoleSeq" ColumnName="RoleSeq" />
+                <ScalarProperty Name="NotarySeq" ColumnName="NotarySeq" />
+                <ScalarProperty Name="InsertedDate" ColumnName="InsertedDate" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTransaction">
+            <EntityTypeMapping TypeName="SystemXModel.UserTransaction">
+              <MappingFragment StoreEntitySet="UserTransaction">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="UserSeq" ColumnName="UserSeq" />
+                <ScalarProperty Name="UserAccountSeq" ColumnName="UserAccountSeq" />
+                <ScalarProperty Name="TotalMoney" ColumnName="TotalMoney" />
+                <ScalarProperty Name="NotaryAccountSeq" ColumnName="NotaryAccountSeq" />
+                <ScalarProperty Name="LU_OperationTypeSeq" ColumnName="LU_OperationTypeSeq" />
+                <ScalarProperty Name="TotalMoneyToSystem" ColumnName="TotalMoneyToSystem" />
+                <ScalarProperty Name="StatusSeq" ColumnName="StatusSeq" />
+                <ScalarProperty Name="InsertedTime" ColumnName="InsertedTime" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedTime" ColumnName="UpdatedTime" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vehicle">
+            <EntityTypeMapping TypeName="SystemXModel.Vehicle">
+              <MappingFragment StoreEntitySet="Vehicle">
+                <ScalarProperty Name="Seq" ColumnName="Seq" />
+                <ScalarProperty Name="RuhsatNo" ColumnName="RuhsatNo" />
+                <ScalarProperty Name="SaseNo" ColumnName="SaseNo" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="DateOfInTrafic" ColumnName="DateOfInTrafic" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Kilometer" ColumnName="Kilometer" />
+                <ScalarProperty Name="StatusSeq" ColumnName="StatusSeq" />
+                <ScalarProperty Name="InsertedTime" ColumnName="InsertedTime" />
+                <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+                <ScalarProperty Name="UpdatedTime" ColumnName="UpdatedTime" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

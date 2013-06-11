@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0B19FDC9-2B5B-4C2A-957B-EC989E971F48}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SystemData</RootNamespace>
+    <AssemblyName>SystemData</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <EntityDeploy Include="SystemX.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SystemX.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SystemX.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SystemX.edmx</DependentUpon>
+      <LastGenOutput>SystemX.Context.cs</LastGenOutput>
+    </None>
+    <None Include="SystemX.edmx.diagram">
+      <DependentUpon>SystemX.edmx</DependentUpon>
+    </None>
+    <None Include="SystemX.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SystemX.edmx</DependentUpon>
+      <LastGenOutput>SystemX.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Audit.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="City.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Country.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="County.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerAccount.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Estate.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LU_AccountType.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LU_Bank.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LU_EstateType.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LU_Item.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LU_OperationType.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LU_ProcessType.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LU_RateType.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Message.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Notary.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NotaryAccount.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentTransaction.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessApproval.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Rate.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sex.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAccount.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SystemX.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SystemX.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SystemX.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SystemX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SystemX.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionDetailBuyer.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserTransaction.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicle.cs">
+      <DependentUpon>SystemX.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
